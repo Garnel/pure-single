@@ -255,6 +255,7 @@ pre {
     font-size: 12px;
     padding: 1em;
     display: none;
+    z-index:10;
 }
 
 .go-top:hover {

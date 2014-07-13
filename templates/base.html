@@ -61,7 +61,8 @@
 
         // Show or hide the sticky footer button
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
+            // when reach the bottom, hide it to see the menu
+            if ($(this).scrollTop() > 200 && $(this).scrollTop() < $(document).height() - $(this).height() - 5) {
                 $top.fadeIn(200);
             } else {
                 $top.fadeOut(200);
