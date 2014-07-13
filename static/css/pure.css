@@ -37,6 +37,7 @@ pre {
     bottom: 0;
     width: 25%;
     margin-left: -25%;
+    background: none repeat scroll 0% 0% #3D4F5D;
 }
 
 .avatar {
@@ -109,6 +110,7 @@ pre {
     text-align: center;
     width: 767px;
     max-width: 100%;
+    margin-top: 80%;
 }
 
 .brand-main a {
@@ -268,12 +270,12 @@ pre {
     padding-left: 25%; /* "left col (nav + list)" width */
     position: relative;
 }
+
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;
         position: relative;
         margin: 0;
-        height: 450px;
     }
     .content {
         padding: 1em 1.5em 0;
@@ -295,6 +297,7 @@ pre {
         text-align: center;
         top: auto;
         position: static;
+        margin: 3em auto;
     }
 
     #layout {

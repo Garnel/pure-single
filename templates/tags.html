@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block title %}tags // {{ super() }}{% endblock title %}
+
+{% block head_js %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+    <script>
+        // random tag color
+        $(document).ready(function(){
+            var colors = ["#1CB841", "#CA3C3C", "#DF7514", "#42B8DD", "#4D85D1", "#8156A7", "#999"];
+            $("a.tag").each(function(){
+                $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
+            });
+        })
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div class="yue">
+            <ul>
+                {% for tag, articles in tags %}
+                <li><a class="tag" href="{{ SITEURL }}/{{ tag.url }}" title="{{ articles|length }}篇文章">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="#" class="go-top">回顶部</a>
+        {% include 'footer.html' %}
+    </div>
+{% endblock %}

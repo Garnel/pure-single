@@ -23,40 +23,35 @@
     {% endblock head %}
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> <!--baidu cdn-->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/yue.css">
     {% block head_css %}{% endblock %}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script> <!-- baidu cdn -->
     {% block head_js %}{% endblock %}
 </head>
 
 <body>
     <div class="pure-g-r" id="layout">
-        <div class="sidebar pure-u">
-            <div class="cover-img" style="background-image: url('{% block sidebar %}{{ COVER_IMG_URL }}{% endblock %}')">
-                <div class="cover-body">
-                    <header class="header">
-                        <hgroup>
-                            {% if PROFILE_IMG_URL %}
-                            <img class="avatar" src="{{ PROFILE_IMG_URL }}">
-                            {% endif %}
-                            <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
-                            <p class="tagline">{{ TAGLINE }}</p>
-                            {% for title, link in MENUITEMS %}
-                                <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
-                            {% endfor %}
-                                <p class="social">
-                            {% for title, link in SOCIAL %}
-                                    <a href="{{ link }}">
-                                        <i class="fa fa-{{ title }} fa-3x"></i>
-                                    </a>
-                            {% endfor %}
-                                <p>
-                        </hgroup>
-                    </header>
-                </div>
-            </div>
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <header class="header">
+                <hgroup>
+                    {% if PROFILE_IMG_URL %}
+                    <img class="avatar" src="{{ PROFILE_IMG_URL }}">
+                    {% endif %}
+                    <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
+                    <p class="tagline">{{ TAGLINE }}</p>
+                    {% for title, link in MENUITEMS %}
+                    <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
+                    {% endfor %}
+                    <p class="social">
+                    {% for title, link in SOCIAL %}
+                        <a href="{{ link }}"><i class="fa fa-{{ title }} fa-3x"></i></a>
+                    {% endfor %}
+                    </p>
+                </hgroup>
+            </header>
         </div>
         {% block content %}
         {% endblock %}

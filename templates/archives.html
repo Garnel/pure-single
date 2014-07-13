@@ -4,17 +4,16 @@
 
 
 {% block content %}
-    <div class="pure-u-1">
-        <div class="content">
-            <h1 class="content-subhead">All posts</h1>
-            {% for article in dates %}
-                <div class="archive-item">
-                    <h5 class="archive-date">{{ article.date|strftime('%Y') }}</h5>
-                    <h4 class="archive-date">{{ article.date|strftime('%d %B') }}</h4>
-                    <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
-                </div>
-            {% endfor %}
-            {% include 'footer.html' %}
-        </div>
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <h1 class="content-subhead">All posts</h1>
+        {% for article in dates %}
+            <div class="archive-item yue">
+                <h3 class="archive-date">{{ article.date|strftime('%Y-%m-%d') }}</h3>
+                <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
+                <hr>
+            </div>
+        {% endfor %}
+        <a href="#" class="go-top">回顶部</a>
+        {% include 'footer.html' %}
     </div>
 {% endblock %}
