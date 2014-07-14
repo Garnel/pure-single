@@ -1,13 +1,26 @@
 Pure Single
 ===========
 
-[Blogging theme](http://purepelican.com) based on [Purecss](http:purecss.io) for [Pelican](http://docs.getpelican.com/) blogs.
+Fork from [Blogging theme](http://purepelican.com).
+
+It based on [Purecss](http:purecss.io) and [yue.css](http://lab.lepture.com/yue.css/) for [Pelican](http://docs.getpelican.com/) blogs.
 Theme is responsive.
+
+## Changes
+* Remove image from sidebar
+* Add yue.css for better readability
+* Replace disqus with duoshuo
+* Add baidu CDN for `font awesome` and `JQuery`
+* Add tags page
+* Add menu in the footer
+* Some other changes in html and css...
+
+## Todo
+* Add upyun cdn
+* blah blah blah
 
 ## PELICANCONF.PY
 
-* `COVER_IMG_URL` - Set the sidebar image.
-* `PROFILE_IMG_URL` - Set the image for the top circle cutout.
 * `TAGLINE` - Used for the page titles and some meta tags.
 * `DISQUS_SITENAME` - Set this to enable disqus comments in articles.
 * `GOOGLE_ANALYTICS` - Set the Google Analytics code (eg. "UA-000000-00")
@@ -22,10 +35,5 @@ Theme is responsive.
     ```
     where the first value of the tuple is the icon name from http://fontawesome.io/icons/ after stripping `fa-` (eg. `fa-github` will be `github`)
 
-## Custom article metadata:
-* `sidebarimage` - will replace the image on the sidebar on an article basis
-
 ## Aditional features
 * [FitVids](https://github.com/davatron5000/FitVids.js) jQuery plugin for fluid width video embeds.
-
-
