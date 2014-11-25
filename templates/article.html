@@ -16,6 +16,8 @@
         .highlight pre {
             font-size: 75%;
             background-color: transparent;
+            word-wrap: normal;
+            white-space: pre;
         }
     </style>
 {% endblock %}
@@ -75,7 +77,11 @@
             {{ article.content }}
         </section>
         <a href="#" class="go-top">回顶部</a>
-        {% include 'duoshuo.html' %}
+        {{ if article.lang == 'en' }}
+            {% include 'duoshuo.html' %}
+        {{ else }}
+            {% include 'disqus.html' %}
+        {{ endif }}
         {% include 'footer.html' %}
     </div>
 {% endblock  %}
